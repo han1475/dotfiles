@@ -1,0 +1,3 @@
+[submodule "lisp/org-page"]
+	path = lisp/org-page
+	url = git@github.com:han1475/org-page.git
