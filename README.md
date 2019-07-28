@@ -1,5 +1,5 @@
 # dotfiles-and-scripts
-Dotfiles and scripts providing cumbersome configure details for Arch Linux, Emacs etc. 
+Dotfiles and scripts providing cumbersome configure details for Arch Linux, Emacs,Oh My ZSH, etc. 
 
 ## Installation
 ### Arch Linux
