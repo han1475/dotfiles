@@ -26,12 +26,6 @@
 (require 'init-elpa)      ;; Machinery for installing required packages
 (require 'init-exec-path) ;; Set up $PATH
 
-;;----------------------------------------------------------------------------
-;; Load configs for specific features and modes
-;;----------------------------------------------------------------------------
-(require 'init-org-page)
-
-
 ;; Extra packages which don't require any configuration
 (require-package 'htmlize)
 (require-package 'dash)
@@ -39,6 +33,14 @@
 (require-package 'simple-httpd)
 (require-package 'git)
 (require-package 'mustache)
+
+;;----------------------------------------------------------------------------
+;; Load configs for specific features and modes
+;;----------------------------------------------------------------------------
+(require 'init-org-page)
+
+
+
 
 (provide 'init)
 
