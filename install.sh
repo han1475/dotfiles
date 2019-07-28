@@ -6,3 +6,4 @@ sudo pacman -S \
 
 # Create symbolic links of dotfiles
 stow emacs
+stow zsh
