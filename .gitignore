@@ -2,5 +2,5 @@
 emacs/**/elpa*
 emacs/**/custom.el*
 emacs/**/auto-save-list
-
+emacs/**/bookmarks
 

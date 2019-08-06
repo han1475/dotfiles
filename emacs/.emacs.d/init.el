@@ -38,6 +38,7 @@
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
 (require 'init-org-page)
+(require 'init-ox-hugo)
 
 
 
