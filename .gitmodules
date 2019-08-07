@@ -1,3 +1,6 @@
 [submodule "emacs/.emacs.d/lisp/org-page"]
 	path = emacs/.emacs.d/lisp/org-page
 	url = git@github.com:han1475/org-page.git
+[submodule "arch-installation-scripts"]
+	path = arch-installation-scripts
+	url = git@github.com:han1475/arch-installation-scripts.git
