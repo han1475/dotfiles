@@ -2,8 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(after-load 'ox
-  (require 'ox-hugo))
+(require-package 'ox-hugo)
 
 ;;； org-hugo capture
 (with-eval-after-load 'org-capture
@@ -13,7 +12,8 @@
      (let* (
             (date (format-time-string (org-time-stamp-format  :inactive) (org-current-time)))
             (title (read-from-minibuffer "Post Title: ")) ;Prompt to enter the post title
-            (fname (org-hugo-slug title)))
+            (pfilename (read-from-minibuffer "file name: ")) ;Prompt to enter the post file name
+            (fname (org-hugo-slug pfilename)))
        (mapconcat #'identity
                   `(
                     ,(concat "** TODO " title "     :标签:@分类:")
