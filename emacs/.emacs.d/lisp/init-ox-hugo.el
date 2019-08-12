@@ -3,7 +3,8 @@
 ;;; Code:
 
 (require-package 'ox-hugo)
-
+(with-eval-after-load 'ox
+  (require 'ox-hugo))
 ;;； org-hugo capture
 (with-eval-after-load 'org-capture
  (defun org-hugo-new-subtree-post-capture-template ()
@@ -31,9 +32,10 @@
                  ;; It is assumed that below file is present in `org-directory'
                  ;; and that it has a "Blog Ideas" heading. It can even be a
                  ;; symlink pointing to the actual location of all-posts.org!
-                 (file+olp "~/blog-hugo/org/han.org" "blog")
+                 (file+olp "~/blog/org/han.org" "blog")
                  (function org-hugo-new-subtree-post-capture-template))))
-(setq org-hugo-default-section-directory "post")
+;;~<HUGO_BASE_DIR> in ~/blog/org/han.org
+(setq org-hugo-default-section-directory "post");~<HUGO_BASE_DIR>/content/post/~
 (global-set-key (kbd "C-c c") 'org-capture)
 
 (provide 'init-ox-hugo)
