@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # Install all the necessary Arch Linux packages, especially `stow`.
 sudo pacman -S \
