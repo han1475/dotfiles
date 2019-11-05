@@ -32,7 +32,7 @@
                  ;; It is assumed that below file is present in `org-directory'
                  ;; and that it has a "Blog Ideas" heading. It can even be a
                  ;; symlink pointing to the actual location of all-posts.org!
-                 (file+olp "~/blog/org/han.org" "blog")
+                 (file+olp "~/han1475.github.io/org/han.org" "blog")
                  (function org-hugo-new-subtree-post-capture-template))))
 ;;~<HUGO_BASE_DIR> in ~/blog/org/han.org
 (setq org-hugo-default-section-directory "post");~<HUGO_BASE_DIR>/content/post/~
