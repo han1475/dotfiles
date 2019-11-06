@@ -2,7 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(require 'org-page)
+(require-package 'org-page)
 (setq op/repository-directory "~/site") ;;本地仓库位置
 (setq op/personal-github-link "https://github.com/han1475") ;;github 连接
 (setq op/site-domain "http://han1475.com/")
