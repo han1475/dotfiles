@@ -1,4 +1,4 @@
-;;; init-org-page.el --- Support org-page -*- coding: utf-8; lexical-binding: t -*-
+;;; init-ox-hugo.el --- Support ox-hugo -*- coding: utf-8; lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
 
@@ -34,7 +34,6 @@
                  ;; symlink pointing to the actual location of all-posts.org!
                  (file+olp "~/han1475.github.io/org/han.org" "blog")
                  (function org-hugo-new-subtree-post-capture-template))))
-;;~<HUGO_BASE_DIR> in ~/blog/org/han.org
 (setq org-hugo-default-section-directory "post");~<HUGO_BASE_DIR>/content/post/~
 (global-set-key (kbd "C-c c") 'org-capture)
 
