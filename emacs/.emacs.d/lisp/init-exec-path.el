@@ -1,7 +1,6 @@
 ;;; init-exec-path.el --- Set up exec-path to help Emacs find programs  -*- coding: utf-8; lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
-
 (require-package 'exec-path-from-shell)
 
 (after-load 'exec-path-from-shell
