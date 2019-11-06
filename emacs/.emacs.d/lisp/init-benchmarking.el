@@ -1,7 +1,6 @@
 ;;; init-benchmarking.el --- Measure startup and require times -*- coding: utf-8; lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
-
 (defun han1475/time-subtract-millis (b a)
   (* 1000.0 (float-time (time-subtract b a))))
 

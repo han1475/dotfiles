@@ -1,7 +1,6 @@
 ;;; init-utils.el --- Elisp helper functions and commands -*- coding: utf-8; lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
-
 (if (fboundp 'with-eval-after-load)
     (defalias 'after-load 'with-eval-after-load)
   (defmacro after-load (feature &rest body)
