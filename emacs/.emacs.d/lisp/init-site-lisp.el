@@ -1,7 +1,6 @@
 ;;; init-site-lisp.el --- Support elisp manually installed in the site-lisp dir -*- coding: utf-8; lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
-
 ;;; Set load path
 
 (eval-when-compile (require 'cl))
