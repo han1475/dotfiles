@@ -2,6 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 (require-package 'ox-hugo)
+(with-eval-after-load 'ox
+  (require 'ox-hugo))
 (setq org-hugo-default-section-directory "post");
 
 
