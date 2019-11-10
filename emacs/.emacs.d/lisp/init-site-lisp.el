@@ -2,7 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 ;;; Set load path
-
 (eval-when-compile (require 'cl))
 (defun han1475/add-subdirs-to-load-path (parent-dir)
   "Adds every non-hidden subdir of PARENT-DIR to `load-path'."
