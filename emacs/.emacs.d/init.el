@@ -22,6 +22,7 @@
 ;;----------------------------------------------------------------------------
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
+(require 'init-linum-mode)
 (require 'init-ox-hugo)
 (require 'init-yasnippet)
 
