@@ -27,6 +27,7 @@
 (require 'init-yasnippet)
 (require 'init-ivy)
 (require 'init-company)
+(require 'init-whitespace)
 
 
 ;;; Local Variables:
