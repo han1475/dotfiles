@@ -25,7 +25,9 @@
 (require 'init-linum-mode)
 (require 'init-ox-hugo)
 (require 'init-yasnippet)
-
+(require 'init-ivy)
+(require 'init-company)
+(require 'init-whitespace)
 
 
 ;;; Local Variables:
