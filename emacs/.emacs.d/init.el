@@ -1,5 +1,5 @@
 ;;;init.el --- Load the full configuration -*- coding: utf-8; lexical-binding: t; -*-
-;; Produce backtraces when errors occur
+;; Produce backtraces when errors occur: can be helpful to diagnose startup issues
 ;;(setq debug-on-error t)
 
 
