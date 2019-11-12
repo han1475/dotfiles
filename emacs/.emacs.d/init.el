@@ -1,6 +1,6 @@
 ;;;init.el --- Load the full configuration -*- coding: utf-8; lexical-binding: t; -*-
 ;; Produce backtraces when errors occur
-(setq debug-on-error t)
+;;(setq debug-on-error t)
 
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
