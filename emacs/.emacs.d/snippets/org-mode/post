@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: post
+# key: p
+# --
+** TODO $1    :@$2:
+:PROPERTIES:
+:EXPORT_FILE_NAME: $3
+:END:
+$0
