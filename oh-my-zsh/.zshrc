@@ -101,10 +101,32 @@ source ~/.nvm/nvm.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# system
 alias install='sudo pacman -S'
 alias search='sudo pacman -Ss'
 alias update='sudo pacman -Syu'
 alias remove='sudo pacman -Rcn'
 alias poweroff='sudo shutdown -h now'
 alias reboot='sudo reboot'
-alias qemacs='emacs -Q --eval "(setq startup-now t)" -l "~/.emacs.d/init.el"'
+
+# emacs
+alias em='emacs'
+# only load basic text package to startup quickly.
+alias emq='emacs -Q --eval "(setq startup-now t)" -l "~/.emacs.d/init.el"'
+
+# git
+alias gs='git status'
+alias gc='git checkout'
+alias gcb='git checkout -b'
+alias ga='git add'
+alias gaa='git add .'
+alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+# keep commit history,do not keep branch history
+alias gm='git merge'
+# do not keep commit and branch history, just keep changes.need commit again.
+alias gms='git merge --squash'
+# keep branch and commit history.
+alias gmf='git merge --no-ff'
+alias gcm='git commit -m'
+alias gp='git push'
