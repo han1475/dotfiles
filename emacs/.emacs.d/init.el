@@ -53,20 +53,19 @@
 ;; Calls (package-initialize)
 (require-init 'init-elpa)      ;; Machinery for installing required packages
 
-;; Extra packages which don't require any configuration
-
-
 ;;----------------------------------------------------------------------------
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
 (require-init 'init-linum-mode)
 (require-init 'init-org t)
 (require-init 'init-ox-hugo t)
-(require-init 'init-yasnippet)
+(require-init 'init-yasnippet t)
 (require-init 'init-ivy)
-(require-init'init-company t)
+(require-init 'init-company t)
 (require-init 'init-whitespace)
+(require-init 'init-evil)
 
+;; Extra packages which don't require any configuration
 
 ;;; Local Variables:
 ;;; no-byte-compile: t
