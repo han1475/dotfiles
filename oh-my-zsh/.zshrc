@@ -110,6 +110,10 @@ alias remove='sudo pacman -Rcn'
 alias poweroff='sudo shutdown -h now'
 alias reboot='sudo reboot'
 
+# yay
+alias yinstall='yay -S'
+alias ysearch='yay -Ss'
+
 # emacs
 alias em='emacs'
 # only load basic text package to startup quickly.
