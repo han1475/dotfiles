@@ -38,6 +38,11 @@
   (when (or (not maybe-disabled) (not (boundp 'startup-now)))
     (load (file-truename (format "~/.emacs.d/lisp/%s" pkg)) t t)))
 
+;; load local packages
+(defun local-require (pkg)
+  (unless (featurep pkg)
+    (load (expand-file-name(format "~/.emacs.d/site-lisp/%s/%s" pkg pkg)))))
+
 
 ;; *Message* buffer should be writable in 24.4+
 (defadvice switch-to-buffer (after switch-to-buffer-after-hack activate)
@@ -49,7 +54,6 @@
 ;;----------------------------------------------------------------------------
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (require-init 'init-utils)
-(require-init 'init-site-lisp) ;; Must come before elpa, as it may provide package.el
 ;; Calls (package-initialize)
 (require-init 'init-elpa)      ;; Machinery for installing required packages
 
@@ -64,7 +68,7 @@
 (require-init 'init-company t)
 (require-init 'init-whitespace)
 (require-init 'init-evil)
-
+(require-init 'init-auto-save)
 ;; Extra packages which don't require any configuration
 
 ;;; Local Variables:
