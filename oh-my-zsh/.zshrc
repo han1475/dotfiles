@@ -119,6 +119,7 @@ alias ysearch='yay -Ss'
 
 # emacs
 alias em='emacs'
+alias emc="emacsclient -a '' -t"
 # only load basic text package to startup quickly.
 alias emq='emacs -Q --eval "(setq startup-now t)" -l "~/.emacs.d/init.el"'
 
