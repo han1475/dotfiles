@@ -80,8 +80,6 @@ source $ZSH/oh-my-zsh.sh
 export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node
 source ~/.nvm/nvm.sh
 
-# This load ruby
-PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
