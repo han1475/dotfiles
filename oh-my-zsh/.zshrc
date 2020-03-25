@@ -116,15 +116,9 @@ alias yinstall='yay -S'
 alias ysearch='yay -Ss'
 
 # emacs
-## start emacs with the daemon option when user log in,as io for wsl2 is slow.
-EMACSD=`ps -aux | grep emacs | wc -l`
-if [ "$EMACSD" -lt 2 ];then
-    emacs --daemon
-fi
-alias emc="emacsclient -a '' -t"
-
 alias em='emacs'
-## only load basic text package to startup quickly.
+alias emc="emacsclient -a '' -t"
+# only load basic text package to startup quickly.
 alias emq='emacs -Q --eval "(setq startup-now t)" -l "~/.emacs.d/init.el"'
 
 # git
