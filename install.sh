@@ -12,6 +12,10 @@ install_packages()
     printf "%s\n" \
 	   "install oh my zsh"
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    # install nvm
+    printf "%s\n" \
+	   "install nvm"
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 }
 restore_packages()
 {
@@ -26,9 +30,9 @@ backup_packages()
 create_symlink()
 {
     sudo pacman -S --needed stow
-    #stow git
-    #stow emacs
-    #stow oh-my-zsh
+    stow git
+    stow emacs
+    stow oh-my-zsh
 }
 usage()
 {
