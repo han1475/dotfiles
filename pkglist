@@ -5,7 +5,6 @@ base
 binutils
 bison
 emacs
-fakeroot
 flex
 gcc
 git
