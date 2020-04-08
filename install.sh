@@ -5,17 +5,17 @@ set -ue
 ###############################################################
 # Local functions
 
-# Install packages that not in pacman repo
+# Install packages that not in pacman repository
 install_packages()
 {
     # install oh my zsh
     printf "%s\n" \
 	   "install oh my zsh"
-    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    curl -o- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh
     # install nvm
     printf "%s\n" \
 	   "install nvm"
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | sh
 }
 restore_packages()
 {
@@ -46,7 +46,7 @@ usage()
 	   "-s, --symlink   Create symlink of configuration by GNU Stow"
 
     printf "%s\n" \
-	   "-i, --install   Install packages that in pacman repo"
+	   "-i, --install   Install packages that not in pacman repository"
 
     printf "%s\n" \
 	   "-h, --help      Display this really usefull message"
