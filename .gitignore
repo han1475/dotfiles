@@ -1,6 +1,3 @@
-#emacs
-**/elpa*
-**/custom.el*
-**/auto-save-list
-**/bookmarks
-**/'#*#'
+/elpa*
+/custom.el*
+/auto-save-list
