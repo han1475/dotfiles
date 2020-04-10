@@ -21,7 +21,12 @@
 ;;----------------------------------------------------------------------------
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (require 'init-elpa)
+(require 'init-utils)
 
+;;----------------------------------------------------------------------------
+;; Load configs for specific features and modes
+;;----------------------------------------------------------------------------
+(require 'init-yasnippet)
 
 (provide 'init)
 
