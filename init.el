@@ -27,6 +27,7 @@
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
 (require 'init-yasnippet)
+(require 'init-ox-hugo)
 
 (provide 'init)
 
