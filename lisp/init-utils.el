@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; code:
 
+(defvar cached-normal-file-full-path nil)
 (defvar load-user-customized-major-mode-hook t)
 
 (defvar force-buffer-file-temp-p nil)
