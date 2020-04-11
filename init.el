@@ -29,6 +29,7 @@
 (require 'init-yasnippet)
 (require 'init-ox-hugo)
 (require 'init-linum-mode)
+(require 'init-eighty-column)
 
 (provide 'init)
 
