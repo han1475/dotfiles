@@ -30,6 +30,7 @@
 (require 'init-ox-hugo)
 (require 'init-linum-mode)
 (require 'init-eighty-column)
+(require 'init-org)
 
 (provide 'init)
 
