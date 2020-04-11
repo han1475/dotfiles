@@ -2,7 +2,10 @@
 ;;; Commentary:
 ;;; code:
 
-
+(setq display-line-numbers-width 2)
+(setq display-line-numbers-grow-only t)
+(set-face-background 'line-number "#BCBCBC")
+(set-face-foreground 'line-number-current-line "#002b36")
 
 ;; http://stackoverflow.com/questions/3875213/turning-on-linum-mode-when-in-python-c-mode
 (setq linum-mode-inhibit-modes-list '(eshell-mode
@@ -47,7 +50,7 @@
 				 nil
 			       t)))
 (add-hook 'display-line-numbers-mode-hook 'display-line-numbers-mode-hook-setup)
-  (global-display-line-numbers-mode t)
+(global-display-line-numbers-mode t)
 
 (provide 'init-linum-mode)
 
