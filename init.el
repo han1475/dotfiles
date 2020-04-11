@@ -28,6 +28,7 @@
 ;;----------------------------------------------------------------------------
 (require 'init-yasnippet)
 (require 'init-ox-hugo)
+(require 'init-linum-mode)
 
 (provide 'init)
 
