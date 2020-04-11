@@ -1,4 +1,4 @@
-;;; init-eighty-column.el --- eighty column ruler -*- lexical-binding: t -*-
+;;; init-eighty-column.el --- eighty column rule -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; code:
 
