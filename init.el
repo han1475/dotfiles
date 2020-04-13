@@ -31,6 +31,7 @@
 (require 'init-linum-mode)
 (require 'init-eighty-column)
 (require 'init-org)
+(require 'init-company)
 
 (provide 'init)
 
