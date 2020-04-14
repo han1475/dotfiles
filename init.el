@@ -32,6 +32,7 @@
 (require 'init-eighty-column)
 (require 'init-org)
 (require 'init-company)
+(require 'init-git)
 
 (provide 'init)
 

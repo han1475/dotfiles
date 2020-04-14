@@ -2,4 +2,5 @@
 /custom.el*
 /auto-save-list
 */*~
-company-statistics-cache.el
+/company-statistics-cache.el
+/transient
