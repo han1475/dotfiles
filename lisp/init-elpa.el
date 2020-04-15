@@ -22,6 +22,11 @@
     (package-refresh-contents)
         (require-package package min-version t))))
 
+;; Support elisp manually installed in the site-lisp dir
+(defun local-require (pkg)
+  (unless (featurep pkg)
+    (load (expand-file-name (format "~/.emacs.d/site-lisp/%s/%s" pkg pkg)))))
+
 (provide 'init-elpa)
 
 ;; Local Variables:
