@@ -34,6 +34,7 @@
 (require 'init-company)
 (require 'init-git)
 (require 'init-auto-save)
+(require 'init-evil)
 
 (provide 'init)
 
