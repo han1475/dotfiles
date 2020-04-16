@@ -33,6 +33,7 @@
 (require 'init-org)
 (require 'init-company)
 (require 'init-git)
+(require 'init-auto-save)
 
 (provide 'init)
 
