@@ -5,11 +5,11 @@
 ;; Dependencies:
 ;; Evil requires undo-tree.el in the load-path for
 ;; linear undo and undo branches.
-(require-package 'goto-chg)
+(require-package 'undo-tree)
 ;; For the motions g; g, and for the last-change-register .,
 ;; Evil requires the goto-chg.el package,
 ;; which provides the functions goto-last-change and goto-last-change-reverse.
-(require-package 'undo-tree)
+(require-package 'goto-chg)
 
 (require-package 'evil)
 ;; Enable evil-mode
