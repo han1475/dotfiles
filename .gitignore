@@ -1,6 +1,6 @@
 /elpa*
 /custom.el*
 /auto-save-list
-*/*~
+*~
 /company-statistics-cache.el
 /transient
