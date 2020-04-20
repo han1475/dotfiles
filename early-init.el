@@ -7,6 +7,7 @@
 
 ;;; Code:
 
+;; no need to activate all the packages so early
 (setq package-enable-at-startup nil)
 
 ;; So we can detect this having been loaded

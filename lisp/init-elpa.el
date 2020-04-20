@@ -2,8 +2,7 @@
 ;;; Commentary:
 ;;; code:
 
-;; no need to activate all the packages so early
-(setq package-enable-at-startup nil)
+
 (package-initialize)
 
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
