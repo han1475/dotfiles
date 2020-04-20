@@ -2,9 +2,10 @@
 ;;; Commentary:
 ;;; code:
 
-(setq-default whitespace-line-column 80
-	      whitespace-style       '(face lines-tail))
-(add-hook 'prog-mode-hook #'whitespace-mode)
+;; Default setting
+(setq-default fill-column 80)
+(add-hook 'text-mode-hook #'display-fill-column-indicator-mode)
+(add-hook 'prog-mode-hook #'display-fill-column-indicator-mode)
 
 (provide 'init-eighty-column)
 
