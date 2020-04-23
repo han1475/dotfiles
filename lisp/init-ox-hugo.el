@@ -3,7 +3,7 @@
 ;;; code:
 
 (require-package 'ox-hugo)
-(with-eval-after-load 'ox
+(after 'ox
     (require 'ox-hugo))
 (setq org-hugo-default-section-directory "post")
 

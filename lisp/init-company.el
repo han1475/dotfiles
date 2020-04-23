@@ -18,7 +18,7 @@
 	  company-complete-selection
 	  company-complete-number)))
 
-(with-eval-after-load "company"
+(after 'company
   ;; @see https://github.com/company-mode/company-mode/issues/348
   (company-statistics-mode)
   (push 'company-cmake company-backends)
@@ -67,7 +67,7 @@
           eshell-mode comint-mode erc-mode gud-mode rcirc-mode
           minibuffer-inactive-mode)))
 
-(with-eval-after-load "company-ispell"
+(after 'company-ispell
   (defadvice company-ispell-available (around company-ispell-available-hack activate)
     ;; in case evil is disabled
     (my-ensure 'evil-nerd-commenter)
