@@ -12,7 +12,11 @@
 (require-package 'goto-chg)
 
 (require-package 'evil)
+
 ;; Enable evil-mode
+;; evil must be require explicitly, the autoload seems to not
+;; work properly sometimes.
+(require 'evil)
 (evil-mode 1)
 
 (provide 'init-evil)
