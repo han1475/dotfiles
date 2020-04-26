@@ -5,6 +5,9 @@
 
 ;;; code
 
+;; Disable the Menu bar when in text-only terminals
+(unless (display-graphic-p) (menu-bar-mode -1))
+
 ;; Measure startup time and garbage collections
 (add-hook 'emacs-startup-hook
 	  (lambda ()
