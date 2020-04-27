@@ -47,6 +47,7 @@
 (require 'init-git)
 (require 'init-auto-save)
 (require 'init-evil)
+(require 'init-hydra)
 
 (provide 'init)
 
