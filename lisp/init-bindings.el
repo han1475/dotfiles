@@ -8,7 +8,11 @@
 (setq which-key-min-display-lines 3)
 (which-key-mode)
 
+;; Use a fancy separator between Dedicated window for
+;; Hydra hints and the Echo Area
+(setq lv-use-separator t)
 (require-package 'hydra)
+(autoload 'hydra-default-pre "hydra")
 
 (provide 'init-bindings)
 
