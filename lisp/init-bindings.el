@@ -14,6 +14,32 @@
 (require-package 'hydra)
 (autoload 'hydra-default-pre "hydra")
 
+;; bindings macro
+(defmacro /bindings/define-prefix-keys (keymap prefix &rest body)
+  (declare (indent defun))
+  `(progn
+     ,@(cl-loop for binding in body
+		collect
+		`(let ((seq ,(car binding))
+		       (func ,(cadr binding))
+		       (desc ,(caddr binding)))
+		   (define-key ,keymap (kbd seq) func)
+		   (when desc
+		     (which-key-add-key-based-replacements
+		       (if ,prefix
+			   (concat ,prefix " " seq)
+			 seq)
+		       desc))))))
+
+(defmacro /bindings/define-keys (keymap &rest body)
+  (declare (indent defun))
+  `(/bindings/define-prefix-keys ,keymap nil ,@body))
+
+(defmacro /bindings/define-key (keymap sequence binding &optional description)
+  (declare (indent defun))
+  `(/bindings/define-prefix-keys ,keymap nil
+				      (,sequence ,binding ,description)))
+
 (provide 'init-bindings)
 
 ;; Local Variables:
