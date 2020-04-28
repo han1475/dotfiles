@@ -47,6 +47,7 @@
 (require 'init-git)
 (require 'init-auto-save)
 (require 'init-evil)
+(require 'init-ivy)
 (require 'init-bindings)
 
 (provide 'init)
