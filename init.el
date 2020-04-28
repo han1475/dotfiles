@@ -47,7 +47,7 @@
 (require 'init-git)
 (require 'init-auto-save)
 (require 'init-evil)
-(require 'init-hydra)
+(require 'init-bindings)
 
 (provide 'init)
 
