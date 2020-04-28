@@ -2,8 +2,13 @@
 ;;; Commentary:
 ;;; code:
 
-(require-package 'hydra)
+;; Displays the key bindings following your currently entered incomplete command
+(require-package 'which-key)
+(setq which-key-idle-delay 0.2)
+(setq which-key-min-display-lines 3)
+(which-key-mode)
 
+(require-package 'hydra)
 
 (provide 'init-bindings)
 
