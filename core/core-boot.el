@@ -25,10 +25,10 @@
                          (format-time-string "%Y-%m-%d %H:%M:%S.%3N" (current-time))
                          elapsed))))))
 
-(defadvice load (around dotemacs activate)
+(defadvice load (around han1475 activate)
   (/boot/measure-load file ad-do-it))
 
-(defadvice require (around dotemacs activate)
+(defadvice require (around han1475 activate)
   (if (memq feature features)
       ad-do-it
     (/boot/measure-load feature ad-do-it)))
