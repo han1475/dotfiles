@@ -1,4 +1,4 @@
-;;; init-evil.el --- evil configuration -*- lexical-binding: t -*-
+;;; config-evil.el --- evil configuration -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; code:
 
@@ -19,10 +19,10 @@
 (require 'evil)
 (evil-mode 1)
 
-(provide 'init-evil)
+(provide 'config-evil)
 
 ;; Local Variables:
 ;; coding: utf-8
 ;; no-byte-compile: t
 ;; End:
-;;; init-evil.el ends here
+;;; config-evil.el ends here

@@ -1,4 +1,4 @@
-;;; init-company.el --- company configuration -*- lexical-binding: t -*-
+;;; config-company.el --- company configuration -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; code:
 
@@ -114,10 +114,10 @@
        (setq company-ispell-dictionary (file-truename "~/.emacs.d/misc/english-words.txt")
 	    )))))
 
-(provide 'init-company)
+(provide 'config-company)
 
 ;; Local Variables:
 ;; coding: utf-8
 ;; no-byte-compile: t
 ;; End:
-;;; init-company.el ends here
+;;; config-company.el ends here

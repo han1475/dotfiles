@@ -1,4 +1,4 @@
-;;; init-eighty-column.el --- eighty column rule -*- lexical-binding: t -*-
+;;; config-eighty-column.el --- eighty column rule -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; code:
 
@@ -7,10 +7,10 @@
 (add-hook 'text-mode-hook #'display-fill-column-indicator-mode)
 (add-hook 'prog-mode-hook #'display-fill-column-indicator-mode)
 
-(provide 'init-eighty-column)
+(provide 'config-eighty-column)
 
 ;; Local Variables:
 ;; coding: utf-8
 ;; no-byte-compile: t
 ;; End:
-;;; init-eighty-column.el ends here
+;;; config-eighty-column.el ends here

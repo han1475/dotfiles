@@ -1,4 +1,4 @@
-;;; init-yasnippet.el --- yasnippet configuration -*- lexical-binding: t -*-
+;;; config-yasnippet.el --- yasnippet configuration -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; code:
 
@@ -35,10 +35,10 @@
 
   (yas-reload-all))
 
-(provide 'init-yasnippet)
+(provide 'config-yasnippet)
 
 ;; Local Variables:
 ;; coding: utf-8
 ;; no-byte-compile: t
 ;; End:
-;;; init-yasnippet.el ends here
+;;; config-yasnippet.el ends here

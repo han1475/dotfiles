@@ -1,4 +1,4 @@
-;;; init-git.el --- git configuration -*- lexical-binding: t -*-
+;;; config-git.el --- git configuration -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; code:
 
@@ -70,10 +70,10 @@ Show the diff between current working code and git head."
 ;; Revert current hunk
 (global-set-key (kbd "C-x v r") 'git-gutter:revert-hunk)
 
-(provide 'init-git)
+(provide 'config-git)
 
 ;; Local Variables:
 ;; coding: utf-8
 ;; no-byte-compile: t
 ;; End:
-;;; init-git.el ends here
+;;; config-git.el ends here

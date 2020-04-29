@@ -1,4 +1,4 @@
-;;; init-bindings.el --- bindings configuration -*- lexical-binding: t -*-
+;;; bindings.el --- bindings configuration -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; code:
 
@@ -40,10 +40,10 @@
   `(/bindings/define-prefix-keys ,keymap nil
 				      (,sequence ,binding ,description)))
 
-(provide 'init-bindings)
+(provide 'bindings)
 
 ;; Local Variables:
 ;; coding: utf-8
 ;; no-byte-compile: t
 ;; End:
-;;; init-bindings.el ends here
+;;; bindings.el ends here

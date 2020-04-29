@@ -1,8 +1,6 @@
-;;; init-auto-save.el --- auto-save configuration -*- lexical-binding: t -*-
+;;; config-auto-save.el --- auto-save configuration -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; code:
-
-(local-require 'auto-save)
 
 (defcustom auto-save-exclude '("\\.avi"
                                "\\.mpeg"
@@ -30,6 +28,7 @@ must return non-nil to exclude it.")
 
 (add-to-list 'auto-save-exclude 'file-too-big-p t)
 
+(require 'auto-save)
 (auto-save-enable)
 ;; quietly save
 (setq auto-save-silent t)
@@ -38,10 +37,10 @@ must return non-nil to exclude it.")
 ;; auto save every 2 seconds
 (setq auto-save-idle 2)
 
-(provide 'init-auto-save)
+(provide 'config-auto-save)
 
 ;; Local Variables:
 ;; coding: utf-8
 ;; no-byte-compile: t
 ;; End:
-;;; init-auto-save.el ends here
+;;; config-auto-save.el ends here

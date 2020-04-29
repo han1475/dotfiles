@@ -1,4 +1,4 @@
-;;; init-linum-mode.el --- linum-mode configuration -*- lexical-binding: t -*-
+;;; config-linum-mode.el --- linum-mode configuration -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; code:
 
@@ -52,10 +52,10 @@
 (add-hook 'display-line-numbers-mode-hook 'display-line-numbers-mode-hook-setup)
 (global-display-line-numbers-mode t)
 
-(provide 'init-linum-mode)
+(provide 'config-linum-mode)
 
 ;; Local Variables:
 ;; coding: utf-8
 ;; no-byte-compile: t
 ;; End:
-;;; init-linum-mode.el ends here
+;;; config-linum-mode.el ends here

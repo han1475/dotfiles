@@ -1,4 +1,4 @@
-;;; init-ivy.el --- ivy configuration -*- lexical-binding: t -*-
+;;; config-ivy.el --- ivy configuration -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; code:
 
@@ -17,10 +17,10 @@
 
 (ivy-mode t)
 
-(provide 'init-ivy)
+(provide 'config-ivy)
 
 ;; Local Variables:
 ;; coding: utf-8
 ;; no-byte-compile: t
 ;; End:
-;;; init-ivy.el ends here
+;;; config-ivy.el ends here

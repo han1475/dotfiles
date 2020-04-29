@@ -1,4 +1,4 @@
-;;; init-ox-hugo.el --- ox-hugo configuration -*- lexical-binding: t -*-
+;;; config-ox-hugo.el --- ox-hugo configuration -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; code:
 
@@ -7,10 +7,10 @@
     (require 'ox-hugo))
 (setq org-hugo-default-section-directory "post")
 
-(provide 'init-ox-hugo)
+(provide 'config-ox-hugo)
 
 ;; Local Variables:
 ;; coding: utf-8
 ;; no-byte-compile: t
 ;; End:
-;;; init-ox-hugo.el ends here
+;;; config-ox-hugo.el ends here

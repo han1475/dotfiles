@@ -1,13 +1,13 @@
-;;; init-org.el --- org configuration -*- lexical-binding: t -*-
+;;; config-org.el --- org configuration -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; code:
 
 (setq org-log-done 'time)
 
-(provide 'init-org)
+(provide 'config-org)
 
 ;; Local Variables:
 ;; coding: utf-8
 ;; no-byte-compile: t
 ;; End:
-;;; init-org.el ends here
+;;; config-org.el ends here
