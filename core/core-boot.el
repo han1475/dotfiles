@@ -8,31 +8,6 @@
     (when (file-directory-p dir)
       (add-to-list 'load-path dir))))
 
-(defmacro /boot/measure-load (target &rest body)
-  (declare (indent defun))
-  `(let ((elapsed)
-         (start (current-time)))
-     (prog1
-         ,@body
-       (with-current-buffer (get-buffer-create "*Load Times*")
-         (when (= 0 (buffer-size))
-           (insert (format "| %-60s | %-23s | elapsed  |\n" "feature" "timestamp"))
-           (insert "|------------------------------------------+-------------------------+----------|\n"))
-         (goto-char (point-max))
-         (setq elapsed (float-time (time-subtract (current-time) start)))
-         (insert (format "| %-60s | %s | %f |\n"
-                         ,target
-                         (format-time-string "%Y-%m-%d %H:%M:%S.%3N" (current-time))
-                         elapsed))))))
-
-(defadvice load (around han1475 activate)
-  (/boot/measure-load file ad-do-it))
-
-(defadvice require (around han1475 activate)
-  (if (memq feature features)
-      ad-do-it
-    (/boot/measure-load feature ad-do-it)))
-
 (defmacro bind (&rest commands)
   "Convenience macro which creates a lambda interactive command."
   `(lambda (arg)
