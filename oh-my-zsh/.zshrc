@@ -116,6 +116,8 @@ alias yinstall='yay -S'
 alias ysearch='yay -Ss'
 
 # emacs
+# This load emacs
+export PATH=/home/han/apps/emacs/bin:$PATH
 alias em='emacs'
 alias emc="emacsclient -a '' -t"
 # only load basic text package to startup quickly.
