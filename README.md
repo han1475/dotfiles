@@ -25,7 +25,7 @@ Keep It Simple & Stupid
 
 This was taken from [Purcell][1]'s config.
 
-### 2. after
+### 2. macro `after` of `with-eval-after-load`
 
 `with-eval-after-load` lets you defer execution of code until after a feature has been loaded.  This is used extensively throughout the config, so wrapping macro has been written for ease of use.  This is what keeps the config loading fast.
 
