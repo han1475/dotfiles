@@ -13,6 +13,11 @@
 (add-hook 'text-mode-hook #'electric-pair-mode)
 (add-hook 'prog-mode-hook #'electric-pair-mode)
 
+;; Eighty Column Rule
+(setq-default fill-column 80)
+(add-hook 'text-mode-hook #'display-fill-column-indicator-mode)
+(add-hook 'prog-mode-hook #'display-fill-column-indicator-mode)
+
 (provide 'config-misc)
 
 ;; Local Variables:
