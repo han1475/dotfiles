@@ -27,6 +27,13 @@
     ("?" flycheck-describe-checker)
       ("l" flycheck-list-errors :exit t))
 
+(defhydra /hydras/quit (:hint nil :exit t)
+    "
+   quit:  _q_ → quit    _r_ → restart
+"
+    ("q" save-buffers-kill-terminal)
+    ("r" (restart-emacs '("--debug-init"))))
+
 (provide 'hydras)
 
 ;; Local Variables:
