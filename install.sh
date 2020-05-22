@@ -56,8 +56,8 @@ usage()
 # Command line options
 
 if [ "$#" -eq 0 ]; then
-    printf "%s\\n" "$prog_name: Argument required"
-    printf "%s\\n" "Try '$prog_name --help' for more information."
+    printf "%s\\n" "Argument required"
+    printf "%s\\n" "Try --help or -h for more information."
     exit 1
 fi
 
@@ -85,7 +85,7 @@ while [ "$#" -gt 0 ] ; do
 	    ;;
 	*)
 	    usage
-	    printf "\\n%s\\n" "$prog_name: Invalid option '$1'"
+	    printf "\\n%s\\n" "Invalid option '$1'"
 	    exit 1
 	    ;;
 	esac
