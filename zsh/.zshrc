@@ -1,5 +1,7 @@
+home=/home/han
+
 # Antigen: https://github.com/zsh-users/antigen
-source ~/.antigen/antigen.zsh
+source $home/.antigen/antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -15,7 +17,7 @@ antigen apply
 
 # This load nvm
 export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node
-source ~/.nvm/nvm.sh
+source $home/.nvm/nvm.sh
 
 # system
 alias install='sudo pacman -S'
@@ -31,7 +33,7 @@ alias ysearch='yay -Ss'
 
 # emacs
 # This load emacs
-export PATH=/home/han/apps/emacs/bin:$PATH
+export PATH=$home/apps/emacs/bin:$PATH
 alias em='emacs'
 alias emc="emacsclient -a '' -t"
 # only load basic text package to startup quickly.
