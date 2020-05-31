@@ -10,6 +10,9 @@ antigen bundle git
 # Load the theme.
 antigen theme ys
 
+# Tell Antigen that you're done.
+antigen apply
+
 # This load nvm
 export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node
 source ~/.nvm/nvm.sh
@@ -53,6 +56,3 @@ alias gcm='git commit -m'
 alias gp='git push'
 alias gpf='git push --force'
 alias gr='git reset --hard'
-
-# Tell Antigen that you're done.
-antigen apply
