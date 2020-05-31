@@ -1,17 +1,18 @@
 #!/bin/bash
 
 set -ue
-
 ###############################################################
 # Local functions
 
 # Install packages that not in pacman repository
 install_packages()
 {
-    # install oh my zsh
+	home=/home/han
+    # install antigen
     printf "%s\n" \
-	   "install oh my zsh"
-    curl -o- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh
+	   "Installing antigen ..."
+    [ ! -d "$home/.antigen" ] && mkdir $home/.antigen
+    curl -L git.io/antigen -o  "$home/.antigen/antigen.zsh"
     # install nvm
     printf "%s\n" \
 	   "install nvm"
@@ -20,6 +21,9 @@ install_packages()
 restore_packages()
 {
     sudo pacman -S --needed - < pkglist
+	printf "%s\n" \
+	  "change user shell to zsh"
+	chsh -s /bin/zsh
 }
 
 backup_packages()
@@ -32,7 +36,7 @@ create_symlink()
     sudo pacman -S --needed stow
     stow git
     stow emacs
-    stow oh-my-zsh
+    stow zsh
 }
 usage()
 {
