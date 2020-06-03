@@ -1,5 +1,5 @@
 # dotfiles-and-scripts
-Dotfiles and scripts providing cumbersome configure details for Emacs,Oh My ZSH, etc. 
+Dotfiles and scripts providing cumbersome configure details for Emacs, Zsh, etc. 
 
 ## Installation
 1. It won't overwrite existing files, so move those out of the way first.
