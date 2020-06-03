@@ -61,3 +61,9 @@ alias gr='git reset --hard'
 alias grh='git reset --hard HEAD'
 alias gr1='git reset --hard HEAD^'
 alias gr2='git reset --hard HEAD^^'
+
+# cd
+alias cd..="cd .."
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
