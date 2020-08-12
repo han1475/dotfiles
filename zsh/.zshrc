@@ -19,6 +19,10 @@ antigen apply
 export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node
 source $home/.nvm/nvm.sh
 
+# load deno
+export DENO_INSTALL="/home/han/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
 # system
 alias install='sudo pacman -S'
 alias search='sudo pacman -Ss'
@@ -32,8 +36,6 @@ alias yinstall='yay -S'
 alias ysearch='yay -Ss'
 
 # emacs
-# This load emacs
-export PATH=$home/apps/emacs/bin:$PATH
 alias em='emacs'
 alias emc="emacsclient -a '' -t"
 # only load basic text package to startup quickly.
