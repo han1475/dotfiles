@@ -83,7 +83,10 @@ This was taken from [bling][3].
 
 # install
 
-`git clone --depth 1 https://github.com/han1475/emacs.d.git ~/.emacs.d`
+```
+# initialize submodules in the clone
+git clone --recursive https://github.com/han1475/emacs.d.git ~/.emacs.d
+```
 
 # tips
 
