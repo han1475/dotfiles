@@ -63,6 +63,13 @@ Show the diff between current working code and git head."
 
 (global-git-gutter-mode t)
 
+;; @see https://emacs.stackexchange.com/questions/27946/yasnippets-wont-expand-in-git-commit-mode
+;; Yasnippets won't expand in magit-commit(git-commit-mode).
+;; git-commit-mode is a minor mode and it's major mode is text-mode, but yasnippet expend
+;; only in major mode and in text-mode <TAB> is
+;; just <TAB> key mapping, so yanippet don't work.
+(setq git-commit-major-mode 'org-mode)
+
 (global-set-key (kbd "C-x C-g") 'git-gutter)
 (global-set-key (kbd "C-x v =") 'git-gutter:popup-hunk)
 ;; Stage current hunk

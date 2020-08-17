@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Template of Angular Git Commit Message Conventions
+# key: gcm
+# --
+${1:$$(yas-choose-value '("feat" "fix" "docs" "style" "refactor" "test" "chore"))}${2:$$(yas-choose-value '("" "()"))}: $3 
