@@ -34,9 +34,9 @@ backup_packages()
 create_symlink()
 {
     sudo pacman -S --needed stow
-    stow git
-    stow emacs
-    stow zsh
+    stow --dotfiles git
+    stow --dotfiles emacs
+    stow --dotfiles zsh
 }
 usage()
 {
