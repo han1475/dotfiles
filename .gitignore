@@ -3,11 +3,12 @@ elpa*
 custom.el*
 auto-save-list
 bookmarks
-*~
+*\~
 company-statistics-cache.el
 transient
 recentf
 projectile-bookmarks.eld
 projectile.cache
 config.el
+\#*\#
 
