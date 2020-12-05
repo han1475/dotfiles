@@ -40,6 +40,36 @@ use custom.el to avoid rewrite init.el when emacs startup
       (package-install package)))
 #+END_SRC
 
+** macro after of with-eval-after-load
+with-eval-after-load lets you defer execution of code until after a feature has 
+been loaded. This is used extensively throughout the config, so 
+wrapping macro has been written for ease of use. 
+This is what keeps the config loading fast.
+
+#+BEGIN_SRC emacs-lisp
+  (defmacro after (feature &rest body)
+    "Executes BODY after FEATURE has been loaded.
+  FEATURE may be any one of:
+      'evil            => (with-eval-after-load 'evil BODY)
+      \"evil-autoloads\" => (with-eval-after-load \"evil-autolaods\" BODY)
+      [evil cider]     => (with-eval-after-load 'evil
+			    (with-eval-after-load 'cider
+			      BODY))
+  "
+    (declare (indent 1))
+    (cond
+     ((vectorp feature)
+      (let ((prog (macroexp-progn body)))
+	(cl-loop for f across feature
+		 do
+		 (progn
+		   (setq prog (append `(',f) `(,prog)))
+		   (setq prog (append '(with-eval-after-load) prog))))
+	prog))
+     (t
+      `(with-eval-after-load ,feature ,@body))))
+#+END_SRC
+
 ** Eighty Column Rule
 #+BEGIN_SRC emacs-lisp
   (setq-default fill-column 80)
