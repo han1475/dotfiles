@@ -9,33 +9,33 @@ Keep It Simple & Stupid
 
 ** lexical binding
 #+BEGIN_SRC emacs-lisp
-;; -*- lexical-binding: t -*-
+  ;; -*- lexical-binding: t -*-
 #+END_SRC 
 
 ** custom file
 use custom.el to avoid rewrite init.el when emacs startup
 #+BEGIN_SRC emacs-lisp
-(setq custom-file (concat user-emacs-directory "custom.el"))
-(when (file-exists-p custom-file) 
+  (setq custom-file (concat user-emacs-directory "custom.el"))
+  (when (file-exists-p custom-file) 
     (load custom-file))
 #+END_SRC
 
 ** melpa
 #+BEGIN_SRC emacs-lisp
-(setq package-archives 
-           '(("gnu" . "https://elpa.gnu.org/packages/")
-			 ("melpa" . "https://melpa.org/packages/")
-			 ("melpa-stable" . "https://stable.melpa.org/packages/")))
-(package-initialize)
+  (setq package-archives 
+	'(("gnu" . "https://elpa.gnu.org/packages/")
+	  ("melpa" . "https://melpa.org/packages/")
+	  ("melpa-stable" . "https://stable.melpa.org/packages/")))
+  (package-initialize)
 #+END_SRC 
 
 ** On-demand installation of packages
 #+BEGIN_SRC emacs-lisp
-(defun require-package (package)
-  "Ensures that PACKAGE is installed."
-  (unless (or (package-installed-p package)
-              (require package nil 'noerror))
-    (unless (assoc package package-archive-contents)
-      (package-refresh-contents))
-    (package-install package)))
+  (defun require-package (package)
+    "Ensures that PACKAGE is installed."
+    (unless (or (package-installed-p package)
+		(require package nil 'noerror))
+      (unless (assoc package package-archive-contents)
+	(package-refresh-contents))
+      (package-install package)))
 #+END_SRC
