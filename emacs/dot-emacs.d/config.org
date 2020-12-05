@@ -88,3 +88,71 @@ This is what keeps the config loading fast.
   (add-hook 'text-mode-hook #'electric-pair-mode)
   (add-hook 'prog-mode-hook #'electric-pair-mode)
 #+END_SRC
+
+* packages
+** yasnippet
+#+BEGIN_SRC emacs-lisp
+  (defvar cached-normal-file-full-path nil)
+  (defvar load-user-customized-major-mode-hook t)
+  (defvar force-buffer-file-temp-p nil)
+
+  (defun is-buffer-file-temp ()
+    "If (buffer-file-name) is nil or a temp file or HTML file converted from org file."
+    (interactive)
+    (let* ((f (buffer-file-name)) (rlt t))
+      (cond
+       ((not load-user-customized-major-mode-hook)
+	(setq rlt t))
+       ((not f)
+	;; file does not exist at all
+	;; org-babel edit inline code block need calling hook
+	(setq rlt nil))
+       ((string= f cached-normal-file-full-path)
+	(setq rlt nil))
+       ((string-match (concat "^" temporary-file-directory) f)
+	;; file is create from temp directory
+	(setq rlt t))
+       ((and (string-match "\.html$" f)
+	     (file-exists-p (replace-regexp-in-string "\.html$" ".org" f)))
+	;; file is a html file exported from org-mode
+	(setq rlt t))
+       (force-buffer-file-temp-p
+	(setq rlt t))
+       (t
+	(setq cached-normal-file-full-path f)
+	(setq rlt nil)))
+      rlt))
+    
+  (require-package 'yasnippet)
+  ;; my private snippets, should be placed before enabling yasnippet
+  (setq my-yasnippets (expand-file-name "~/.emacs.d/yasnippet"))
+
+  (defun yasnippet-generic-setup-for-mode-hook ()
+    (unless (is-buffer-file-temp) (yas-minor-mode 1)))
+
+  (add-hook 'prog-mode-hook 'yasnippet-generic-setup-for-mode-hook)
+  (add-hook 'text-mode-hook 'yasnippet-generic-setup-for-mode-hook)
+
+  (after 'yasnippet
+    ;; http://stackoverflow.com/questions/7619640/emacs-latex-yasnippet-why-are-newlines-inserted-after-a-snippet
+    (setq-default mode-require-final-newline nil)
+    ;; (message "yas-snippet-dirs=%s" (mapconcat 'identity yas-snippet-dirs ":"))
+
+    ;; Use `yas-dropdown-prompt' if possible. It requires `dropdown-list'.
+    (setq yas-prompt-functions '(yas-dropdown-prompt
+				 yas-ido-prompt
+				 yas-completing-prompt))
+
+    ;; use `yas-completing-prompt' when ONLY when `M-x yas-insert-snippet'
+    ;; thanks to capitaomorte for providing the trick.
+    (defadvice yas-insert-snippet (around use-completing-prompt activate)
+      "Use `yas-completing-prompt' for `yas-prompt-functions' but only here..."
+      (let* ((yas-prompt-functions '(yas-completing-prompt)))
+	ad-do-it))
+
+    (when (and  (file-exists-p my-yasnippets)
+		(not (member my-yasnippets yas-snippet-dirs)))
+      (add-to-list 'yas-snippet-dirs my-yasnippets))
+
+    (yas-reload-all))
+#+END_SRC
