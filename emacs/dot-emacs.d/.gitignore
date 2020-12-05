@@ -1,9 +1,0 @@
-/elpa*
-/custom.el*
-/auto-save-list
-*~
-/company-statistics-cache.el
-/transient
-/recentf
-projectile-bookmarks.eld
-projectile.cache
