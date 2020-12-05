@@ -39,3 +39,22 @@ use custom.el to avoid rewrite init.el when emacs startup
 	(package-refresh-contents))
       (package-install package)))
 #+END_SRC
+
+** Eighty Column Rule
+#+BEGIN_SRC emacs-lisp
+  (setq-default fill-column 80)
+  (add-hook 'text-mode-hook #'display-fill-column-indicator-mode)
+  (add-hook 'prog-mode-hook #'display-fill-column-indicator-mode)
+#+END_SRC
+
+** Electric Pair
+#+BEGIN_SRC emacs-lisp
+  (setq electric-pair-pairs
+	'((?\" . ?\")
+	  (?\` . ?\`)
+	  (?\( . ?\))
+	  (?\{ . ?\})
+	  (?\~ . ?\~)))
+  (add-hook 'text-mode-hook #'electric-pair-mode)
+  (add-hook 'prog-mode-hook #'electric-pair-mode)
+#+END_SRC
