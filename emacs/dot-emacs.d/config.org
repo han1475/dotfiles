@@ -156,3 +156,40 @@ This is what keeps the config loading fast.
 
     (yas-reload-all))
 #+END_SRC
+** git 
+*** magit & git-gutter
+#+BEGIN_SRC emacs-lisp
+  (require-package 'magit)
+  (require-package 'git-gutter)
+
+  (setq vc-handled-backends '(Git))
+
+  ;; When you open a file which is a symlink to a file under version control,
+  ;; automatically switch and open the actual file.  
+  (setq vc-follow-symlinks t)
+
+  ;; @see https://www.reddit.com/r/emacs/comments/4c0mi3/the_biggest_performance_improvement_to_emacs_ive/
+  ;; open files faster but you can't check if file is version
+  ;; controlled. other VCS functionality still works.
+  (remove-hook 'find-file-hooks 'vc-find-file-hook)
+
+  (global-git-gutter-mode t)
+#+END_SRC
+*** key binding
+#+BEGIN_SRC emacs-lisp
+  (global-set-key (kbd "C-x C-g") 'git-gutter)
+  (global-set-key (kbd "C-x v =") 'git-gutter:popup-hunk)
+  ;; Stage current hunk
+  (global-set-key (kbd "C-x v s") 'git-gutter:stage-hunk)
+  ;; Revert current hunk
+  (global-set-key (kbd "C-x v r") 'git-gutter:revert-hunk)
+#+END_SRC
+*** yasnippet expand in magit-commit
+#+BEGIN_SRC emacs-lisp
+  ;; @see https://emacs.stackexchange.com/questions/27946/yasnippets-wont-expand-in-git-commit-mode
+  ;; Yasnippets won't expand in magit-commit(git-commit-mode).
+  ;; git-commit-mode is a minor mode and it's major mode is text-mode, but yasnippet expend
+  ;; only in major mode and in text-mode <TAB> is
+  ;; just <TAB> key mapping, so yanippet don't work.
+  (setq git-commit-major-mode 'org-mode)
+#+END_SRC
