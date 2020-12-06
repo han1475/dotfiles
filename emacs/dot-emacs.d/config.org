@@ -210,3 +210,11 @@ This is what keeps the config loading fast.
 
   (ivy-mode t)
 #+END_SRC
+** which-key
+#+BEGIN_SRC emacs-lisp
+  ;; Displays the key bindings following your currently entered incomplete command
+  (require-package 'which-key)
+  (setq which-key-idle-delay 0.2)
+  (setq which-key-min-display-lines 3)
+  (which-key-mode)
+#+END_SRC
