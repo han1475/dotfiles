@@ -40,7 +40,7 @@ use custom.el to avoid rewrite init.el when emacs startup
       (package-install package)))
 #+END_SRC
 
-** macro after of with-eval-after-load
+** macro =after= of =with-eval-after-load=
 with-eval-after-load lets you defer execution of code until after a feature has 
 been loaded. This is used extensively throughout the config, so 
 wrapping macro has been written for ease of use. 
@@ -77,7 +77,7 @@ This is what keeps the config loading fast.
   (add-hook 'prog-mode-hook #'display-fill-column-indicator-mode)
 #+END_SRC
 
-** Electric Pair
+** Auto-insert matching delimiters
 #+BEGIN_SRC emacs-lisp
   (setq electric-pair-pairs
 	'((?\" . ?\")
@@ -89,7 +89,7 @@ This is what keeps the config loading fast.
   (add-hook 'prog-mode-hook #'electric-pair-mode)
 #+END_SRC
 
-* packages
+* Packages
 ** yasnippet
 #+BEGIN_SRC emacs-lisp
   (defvar cached-normal-file-full-path nil)
@@ -156,7 +156,7 @@ This is what keeps the config loading fast.
 
     (yas-reload-all))
 #+END_SRC
-** git 
+** Git 
 *** magit & git-gutter
 #+BEGIN_SRC emacs-lisp
   (require-package 'magit)
