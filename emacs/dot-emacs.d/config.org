@@ -99,6 +99,11 @@ This is what keeps the config loading fast.
   (setq save-place-file (locate-user-emacs-file ".emacs-places"))
   (save-place-mode 1)
 #+END_SRC
+** Menu Bar
+Disable Menu Bar
+#+BEGIN_SRC emacs-lisp
+  (menu-bar-mode -1)
+#+END_SRC
 * Packages
 ** yasnippet
 #+BEGIN_SRC emacs-lisp
