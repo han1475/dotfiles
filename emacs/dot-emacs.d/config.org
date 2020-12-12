@@ -89,6 +89,10 @@ This is what keeps the config loading fast.
   (add-hook 'prog-mode-hook #'electric-pair-mode)
 #+END_SRC
 
+** Show matching delimiter or other character
+#+BEGIN_SRC emacs-lisp
+  (show-paren-mode 1)
+#+END_SRC
 * Packages
 ** yasnippet
 #+BEGIN_SRC emacs-lisp
