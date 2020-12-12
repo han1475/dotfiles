@@ -93,6 +93,12 @@ This is what keeps the config loading fast.
 #+BEGIN_SRC emacs-lisp
   (show-paren-mode 1)
 #+END_SRC
+** point goes where it was when you previously visited this file
+#+BEGIN_SRC emacs-lisp
+  (setq save-place-forget-unreadable-files nil)
+  (setq save-place-file (locate-user-emacs-file ".emacs-places"))
+  (save-place-mode 1)
+#+END_SRC
 * Packages
 ** yasnippet
 #+BEGIN_SRC emacs-lisp
