@@ -121,6 +121,11 @@ Cursor goes where it was when you previously visited this file
   (show-paren-mode 1)
 #+END_SRC
 
+* Org-mode
+** basic
+#+BEGIN_SRC emacs-lisp
+(setq org-log-done 'time)
+#+END_SRC
 * Packages
 ** yasnippet
 #+BEGIN_SRC emacs-lisp
@@ -249,4 +254,30 @@ Cursor goes where it was when you previously visited this file
   (setq which-key-idle-delay 0.2)
   (setq which-key-min-display-lines 3)
   (which-key-mode)
+#+END_SRC
+** company
+#+BEGIN_SRC emacs-lisp
+  (require-package 'company)
+  (require-package 'company-statistics)
+  (add-hook 'after-init-hook 'global-company-mode)
+  (after 'company
+     (company-statistics-mode)
+     (unless (featurep 'company-ctags) (require-package 'company-ctags))
+     (company-ctags-auto-setup)
+  )
+#+END_SRC
+** ox-hugo
+#+BEGIN_SRC emacs-lisp
+  (require-package 'ox-hugo)
+  (after 'ox
+      (require 'ox-hugo))
+  (setq org-hugo-default-section-directory "post")
+#+END_SRC
+** projectile
+#+BEGIN_SRC emacs-lisp
+  (require-package 'projectile)
+  (setq projectile-indexing-method 'alien)
+  (setq projectile-enable-caching t)
+  (setq projectile-completion-system 'ivy)
+  (add-hook 'after-init-hook 'projectile-mode)
 #+END_SRC
