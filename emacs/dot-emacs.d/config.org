@@ -70,13 +70,6 @@ This is what keeps the config loading fast.
       `(with-eval-after-load ,feature ,@body))))
 #+END_SRC
 
-** Eighty Column Rule
-#+BEGIN_SRC emacs-lisp
-  (setq-default fill-column 80)
-  (add-hook 'text-mode-hook #'display-fill-column-indicator-mode)
-  (add-hook 'prog-mode-hook #'display-fill-column-indicator-mode)
-#+END_SRC
-
 ** Auto-insert matching delimiters
 #+BEGIN_SRC emacs-lisp
   (setq electric-pair-pairs
@@ -89,21 +82,45 @@ This is what keeps the config loading fast.
   (add-hook 'prog-mode-hook #'electric-pair-mode)
 #+END_SRC
 
-** Show matching delimiter or other character
-#+BEGIN_SRC emacs-lisp
-  (show-paren-mode 1)
-#+END_SRC
-** point goes where it was when you previously visited this file
-#+BEGIN_SRC emacs-lisp
-  (setq save-place-forget-unreadable-files nil)
-  (setq save-place-file (locate-user-emacs-file ".emacs-places"))
-  (save-place-mode 1)
-#+END_SRC
+* UI
 ** Menu Bar
 Disable Menu Bar
 #+BEGIN_SRC emacs-lisp
   (menu-bar-mode -1)
 #+END_SRC
+** Line numbers
+Prevent Extraneous Tabs 
+#+BEGIN_SRC emacs-lisp
+  (setq-default indent-tabs-mode nil)
+#+END_SRC
+Display line numbers
+#+BEGIN_SRC emacs-lisp
+  (setq display-line-numbers-width 2)
+  (setq display-line-numbers-grow-only t) 
+  (global-display-line-numbers-mode t)
+#+END_SRC
+** Highlight current line
+#+BEGIN_SRC emacs-lisp
+  (global-hl-line-mode 1)
+#+END_SRC
+** Eighty Column Rule
+#+BEGIN_SRC emacs-lisp
+  (setq-default fill-column 80)
+  (add-hook 'text-mode-hook #'display-fill-column-indicator-mode)
+  (add-hook 'prog-mode-hook #'display-fill-column-indicator-mode)
+#+END_SRC
+** Cursor place
+Cursor goes where it was when you previously visited this file
+#+BEGIN_SRC emacs-lisp
+  (setq save-place-forget-unreadable-files nil)
+  (setq save-place-file (locate-user-emacs-file ".emacs-places"))
+  (save-place-mode 1)
+#+END_SRC
+** Show matching delimiter or other character
+#+BEGIN_SRC emacs-lisp
+  (show-paren-mode 1)
+#+END_SRC
+
 * Packages
 ** yasnippet
 #+BEGIN_SRC emacs-lisp
