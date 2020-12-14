@@ -3,10 +3,9 @@ Dotfiles and scripts providing cumbersome configure details for Emacs, Zsh, etc.
 
 ## Installation
 1. It won't overwrite existing files, so move those out of the way first.
-2. Clone this thing wherever you like (I use ~/.dotfiles).initialize submodules in the clone,so we use ```git clone --recursive```.
+2. Clone this thing wherever you like (I use ~/.dotfiles).
 ```
-   # initialize submodules in the clone
-   git clone --recursive https://github.com/han1475/dotfiles-and-scripts.git
+   git clone  https://github.com/han1475/dotfiles-and-scripts.git
 ```
 3. install GNU stow, and run the install.sh script. That'll set up a bunch of symlinks in your home directory (e.g., ~/.bashrc → ~/.dotfiles/bash/.bashrc).
 
