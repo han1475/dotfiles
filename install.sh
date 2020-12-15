@@ -41,7 +41,7 @@ create_symlink()
 usage()
 {
     printf "%s\n" \
-	   "-r, --restore   Restore packages in pkglist file"
+	   "-r, --restore   Install packages in pkglist file"
 
     printf "%s\n" \
 	   "-b, --backup    Backup installed by pacman packages to pkglist file"
