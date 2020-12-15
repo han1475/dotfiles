@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: post
-# key: p
+# key: post
 # --
 ** TODO $1    :$2:
 :PROPERTIES:
