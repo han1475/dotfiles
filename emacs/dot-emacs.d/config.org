@@ -88,6 +88,18 @@ Disable Menu Bar
 #+BEGIN_SRC emacs-lisp
   (menu-bar-mode -1)
 #+END_SRC
+** Scroll Bar
+Remove Scroll Bar
+#+BEGIN_SRC emacs-lisp
+  (when (fboundp 'scroll-bar-mode)
+    (scroll-bar-mode -1))
+#+END_SRC
+** Tool Bar
+Remove Tool Bar
+#+BEGIN_SRC emacs-lisp
+  (when (fboundp 'tool-bar-mode)
+     (tool-bar-mode -1))
+#+END_SRC
 ** Line numbers
 Prevent Extraneous Tabs 
 #+BEGIN_SRC emacs-lisp
