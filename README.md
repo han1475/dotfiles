@@ -21,7 +21,7 @@ Clone this repo wherever you like (I use ~/.dotfiles).
 ```
 3. Install packages that not in pacman repository(e.g. antigen, nvm, view `install.sh` for complete list).
 ```
-  ./insall.sh -i
+  ./install.sh -i
 ```
 ### others
 1. GNU stow won't overwrite existing files, so move those out of the way first.
