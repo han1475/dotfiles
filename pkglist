@@ -1,11 +1,7 @@
-arch-install-scripts
-base
 emacs
 git
-less
-nano
 openssh
 stow
-sudo
-systemd
 zsh
+graphviz
+pdftk
