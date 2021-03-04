@@ -8,10 +8,10 @@ source $ZSH/oh-my-zsh.sh
 
 # This load nvm
 export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node
-source $home/.nvm/nvm.sh
+source $HOME/.nvm/nvm.sh
 
 # load deno
-export DENO_INSTALL="/home/han/.deno"
+export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
 # system
@@ -27,7 +27,7 @@ alias yinstall='yay -S'
 alias ysearch='yay -Ss'
 
 # emacs
-export PATH="/home/han/app/emacs/bin:$PATH"
+export PATH="$HOME/app/emacs/bin:$PATH"
 alias em='emacs'
 alias emc="emacsclient -a '' -t"
 # only load basic text package to startup quickly.
