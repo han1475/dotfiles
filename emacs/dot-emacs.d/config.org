@@ -147,7 +147,64 @@ Cursor goes where it was when you previously visited this file
 * Org-mode
 ** basic
 #+BEGIN_SRC emacs-lisp
-(setq org-log-done 'time)
+  (setq org-log-done 'time)
+  (setq org-startup-folded t)
+#+END_SRC
+
+** Publishing and Exporting
+*** Exporter Setup
+#+BEGIN_SRC emacs-lisp
+  (setq org-alphabetical-lists t)
+
+  ;; highlight for html
+  (require-package 'htmlize)
+
+  ;; Explicitly load required exporters
+  (require 'ox-html)
+#+END_SRC
+*** Org-babel Setup
+#+BEGIN_SRC emacs-lisp
+  (setq org-ditaa-jar-path "~/java/ditaa.jar")
+  (setq org-plantuml-jar-path "~/java/plantuml.jar")
+
+  (defun bh/display-inline-images ()
+    (condition-case nil
+        (org-display-inline-images)
+      (error nil)))
+
+  (add-hook 'org-babel-after-execute-hook 'bh/display-inline-images 'append)
+
+  ;; Make babel results blocks lowercase
+  (setq org-babel-results-keyword "results")
+
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((emacs-lisp . t)
+     (js . t)
+     (ditaa . t)
+     (dot . t)
+     (plantuml .t)
+     (org . t)))
+  ;; Do not prompt to confirm evaluation
+  ;; This may be dangerous - make sure you understand the consequences
+  ;; of setting this -- see the docstring for details
+  (setq org-confirm-babel-evaluate nil)
+
+  ;; Use fundamental mode when editing plantuml blocks with C-c '
+  (add-to-list 'org-src-lang-modes  '("plantuml" . fundamental))
+#+END_SRC
+Now you just create a begin-src block for the appropriate tool, edit the text,
+and build the pictures with C-c C-c.
+
+After evaluating the block results are displayed. You can toggle
+display of inline images with C-c C-x C-v
+
+I disable startup with inline images because when I access my org-files from an
+tty session without X this breaks it fails when trying to display the images on
+a non-X session.
+#+BEGIN_SRC emacs-lisp
+  ;; Don't enable this because it breaks access to emacs from an tty session
+  (setq org-startup-with-inline-images nil)
 #+END_SRC
 * Packages
 ** yasnippet
