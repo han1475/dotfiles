@@ -25,10 +25,24 @@ backup_packages()
     sudo pacman -Qqen > pkglist
 }
 
+generate_gitconfig()
+{
+    printf "%s\n" \
+           "Generate Git Config ..."
+    printf "%s\n" \
+           "Type your github author name:"
+    read -e git_authorname
+    printf "%s\n" \
+	   "Type your github author email:"
+    read -e git_authoremail
+    git config --global user.name $git_authorname
+    git config --global user.email $git_authoremail
+    git config --global core.editor emacs
+}
+
 create_symlink()
 {
     sudo pacman -S --needed stow
-    stow --dotfiles git
     stow --dotfiles emacs
     stow --dotfiles zsh
 }
@@ -45,6 +59,9 @@ usage()
 
     printf "%s\n" \
 	   "-i, --install   Install packages that not in pacman repository"
+
+    printf "%s\n" \
+	   "-g, --git       Generate git config"
 
     printf "%s\n" \
 	   "-h, --help      Display this really usefull message"
@@ -75,6 +92,10 @@ while [ "$#" -gt 0 ] ; do
 	    ;;
 	-i | --install)
 	    install_packages
+	    shift
+	    ;;
+	-g | --git)
+	    generate_gitconfig
 	    shift
 	    ;;
 	-h | --help)
