@@ -7,12 +7,6 @@ set -ue
 # Install packages that not in pacman repository
 install_packages()
 {
-	home=/home/han
-    # install antigen
-    printf "%s\n" \
-	   "Installing antigen ..."
-    [ ! -d "$home/.antigen" ] && mkdir $home/.antigen
-    curl -L git.io/antigen -o  "$home/.antigen/antigen.zsh"
     # install nvm
     printf "%s\n" \
 	   "install nvm"
