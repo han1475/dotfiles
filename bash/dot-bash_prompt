@@ -1,0 +1,66 @@
+#!/usr/bin/env bash
+# bash prompt based on Yad Smood's theme in Oh My Zsh
+# repo: https://github.com/ohmyzsh/ohmyzsh
+# theme: https://github.com/ohmyzsh/ohmyzsh/blob/master/themes/ys.zsh-theme
+# Prompt format: \n # USER @ MACHINE in DIRECTORY on git:BRANCH STATE [TIME] \n $
+
+# ANSI_escape_code
+# Foreground color
+black="\e[0;30m"
+red="\e[0;31m"
+green="\e[0;32m"
+yellow="\e[0;33m"
+blue="\e[0;34m"
+purple="\e[0;35m"
+cyan="\e[0;36m"
+white="\e[0;37m"
+# Reset default foreground color
+reset_color="\e[39m"
+# All attributes off
+normal_color="\e[0m"
+
+# Checks if working tree is dirty
+function parse_git_dirty() {
+  local STATUS
+  STATUS=$(git status --porcelain 2> /dev/null | tail -1)
+  if [[ -n $STATUS ]]; then
+    echo -e "$GIT_THEME_PROMPT_DIRTY"
+  else
+    echo -e "$GIT_THEME_PROMPT_CLEAN"
+  fi
+}
+
+function git_prompt_info() {
+  # If we are on a folder not tracked by git, get out.
+  # Otherwise, check for hide-info at global and local repository level
+  if ! $(git rev-parse --git-dir &> /dev/null) ; then
+    return 0
+  fi
+
+  local ref
+  ref=$(git symbolic-ref --short HEAD 2> /dev/null) \
+  || ref=$(git rev-parse --short HEAD 2> /dev/null) \
+  || return 0
+
+  echo -e "${GIT_THEME_PROMPT_PREFIX}${ref}$(parse_git_dirty)${GIT_THEME_PROMPT_SUFFIX}"
+}
+
+# Git info
+git_info='$(git_prompt_info)'
+GIT_THEME_PROMPT_PREFIX="${normal_color}on ${purple}git:${cyan}"
+GIT_THEME_PROMPT_SUFFIX="${reset_color} "
+GIT_THEME_PROMPT_DIRTY=" ${red}x"
+GIT_THEME_PROMPT_CLEAN=" ${green}o"
+
+PS1="
+${blue}# \
+${cyan}\u \
+${normal_color}@ \
+${green}\h \
+${normal_color}in \
+${yellow}\w \
+${git_info}\
+${normal_color}[\t]
+${red}$ \
+${reset_color}\
+"

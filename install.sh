@@ -15,9 +15,6 @@ install_packages()
 restore_packages()
 {
     sudo pacman -S --needed - < pkglist
-	printf "%s\n" \
-	  "change user shell to zsh"
-	chsh -s /bin/zsh
 }
 
 backup_packages()
@@ -44,7 +41,7 @@ create_symlink()
 {
     sudo pacman -S --needed stow
     stow --dotfiles emacs
-    stow --dotfiles zsh
+    stow --dotfiles bash
 }
 usage()
 {

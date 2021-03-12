@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# deno
+export DENO_INSTALL="$HOME/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
+# mupdf-tools
+export PATH="$HOME/app/mupdf/bin:$PATH"
+
+# set prompt
+source $HOME/.bash_prompt
+
+# system
+alias install='sudo pacman -S'
+alias search='sudo pacman -Ss'
+alias update='sudo pacman -Syu'
+alias remove='sudo pacman -Rcn'
+alias poweroff='sudo shutdown -h now'
+alias reboot='sudo reboot'
+
+# emacs
+alias em='emacs'
+alias emc="emacsclient -a '' -t"
+# only load basic text package to startup quickly.
+alias emq='emacs -Q --eval "(setq startup-now t)" -l "~/.emacs.d/init.el"'
