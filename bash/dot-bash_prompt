@@ -53,14 +53,14 @@ GIT_THEME_PROMPT_DIRTY=" ${red}x"
 GIT_THEME_PROMPT_CLEAN=" ${green}o"
 
 PS1="
-${blue}# \
-${cyan}\u \
-${normal_color}@ \
-${green}\h \
-${normal_color}in \
-${yellow}\w \
-${git_info}\
-${normal_color}[\t]
-${red}$ \
-${reset_color}\
+\[${blue}\]# \
+\[${cyan}\]\u \
+\[${normal_color}\]@ \
+\[${green}\]\h \
+\[${normal_color}\]in \
+\[${yellow}\]\w \
+\[${git_info}\]\
+\[${normal_color}\][\t]
+\[${red}\]$ \
+\[${reset_color}\]\
 "
