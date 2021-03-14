@@ -134,8 +134,7 @@ Display line numbers
 ** Eighty Column Rule
 #+BEGIN_SRC emacs-lisp
   (setq-default fill-column 80)
-  (add-hook 'text-mode-hook #'display-fill-column-indicator-mode)
-  (add-hook 'prog-mode-hook #'display-fill-column-indicator-mode)
+  (global-display-fill-column-indicator-mode)
 #+END_SRC
 ** Cursor place
 Cursor goes where it was when you previously visited this file
