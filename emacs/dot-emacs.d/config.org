@@ -111,6 +111,11 @@ Remove Tool Bar
   (when (fboundp 'tool-bar-mode)
      (tool-bar-mode -1))
 #+END_SRC
+** Startup Screen
+#+BEGIN_SRC emacs-lisp
+  ;; disable startup screen
+  (setq inhibit-startup-screen t)
+#+END_SRC
 ** Line numbers
 Prevent Extraneous Tabs 
 #+BEGIN_SRC emacs-lisp
