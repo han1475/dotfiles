@@ -4,3 +4,5 @@ openssh
 stow
 graphviz
 pdftk
+bcprov
+java-commons-lang
