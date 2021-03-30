@@ -168,8 +168,9 @@ Cursor goes where it was when you previously visited this file
 #+END_SRC
 *** Org-babel Setup
 #+BEGIN_SRC emacs-lisp
-  (setq org-ditaa-jar-path "~/java/ditaa.jar")
-  (setq org-plantuml-jar-path "~/java/plantuml.jar")
+  ;; Using ditaa, planuml in Arch Linux Packages.
+  (setq org-ditaa-jar-path "/usr/share/java/ditaa/ditaa-0.11.jar")
+  (setq org-plantuml-jar-path "/usr/share/java/plantuml/plantuml.jar")
 
   (defun bh/display-inline-images ()
     (condition-case nil

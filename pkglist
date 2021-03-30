@@ -2,7 +2,9 @@ emacs
 git
 openssh
 stow
-graphviz
 pdftk
 bcprov
 java-commons-lang
+ditaa
+plantuml
+graphviz
