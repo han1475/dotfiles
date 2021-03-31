@@ -338,6 +338,10 @@ a non-X session.
   (require-package 'which-key)
   (setq which-key-idle-delay 0.2)
   (setq which-key-min-display-lines 3)
+
+  ;; Override the default binding for "\C-h \C-h".
+  (define-key help-map "\C-h" 'which-key-C-h-dispatch)
+
   (which-key-mode)
 #+END_SRC
 ** company
