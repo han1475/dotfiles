@@ -1,5 +1,5 @@
 # dotfiles
-Dotfiles providing cumbersome configure details for Arch Linux, Emacs, Zsh, git, etc. 
+Dotfiles providing cumbersome configure details for Arch Linux, Emacs, Bash, git, etc.
 ## Tips
 Only tested in the following environment used by me.
 - The latest version of Arch Linux without GUI in WSL2(Windows Subsystem for Linux 2)
