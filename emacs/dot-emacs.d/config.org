@@ -221,8 +221,6 @@ Cursor goes where it was when you previously visited this file
 ** Publishing and Exporting
 *** Exporter Setup
 #+BEGIN_SRC emacs-lisp
-  (setq org-alphabetical-lists t)
-
   ;; highlight for html
   (require-package 'htmlize)
 
