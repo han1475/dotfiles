@@ -272,6 +272,108 @@ a non-X session.
   ;; Don't enable this because it breaks access to emacs from an tty session
   (setq org-startup-with-inline-images nil)
 #+END_SRC
+
+*** Publishing Single files
+*** Publishing Projects
+We define some functions and variables that will be used by org-publish.
+#+BEGIN_SRC emacs-lisp
+  (setq blog-dir "~/git/blog/source")
+  (setq blog-publish-dir "~/git/blog/han1475.github.io")
+
+  (defun blog-preamble (properties)
+      (with-temp-buffer
+      (insert-file-contents (concat blog-dir "/template/header.html"))
+      (buffer-string)))
+
+  (defun blog-postamble (properties)
+    (with-temp-buffer
+      (insert-file-contents (concat blog-dir "/template/footer.html"))
+      (buffer-string)))
+
+  (defun blog-index ()
+    (with-temp-buffer
+      (insert-file-contents (concat blog-dir "/blog.org"))
+      (buffer-string)))
+
+  (defun blog-readmore-org ()
+    (with-temp-buffer
+      (insert-file-contents (concat blog-dir "/template/readmore.org"))
+      (buffer-string)))
+
+  (defun blog-readmore-html ()
+    (with-temp-buffer
+      (insert-file-contents (concat blog-dir "/template/readmore.html"))
+      (buffer-string)))
+
+  (defun blog-preparation (properties)
+    (let* ((index-filename (concat blog-dir "/index.org"))
+           (readmore (blog-readmore-org)))
+      (with-temp-file index-filename
+        (insert (replace-regexp-in-string
+                 "^* "
+                 (concat readmore "\n\n* ")
+                 (blog-index)))
+        (insert readmore)
+        (goto-line (+ 2(point-min)))
+        (kill-line 6))))
+
+  (defun publish-html ()
+    (with-temp-buffer
+      (insert-file-contents (concat blog-publish-dir "/index.html"))
+      (buffer-string)))
+
+  (defun blog-completion (properties)
+    (let* ((publish-string (publish-html))
+           (publish-filename (concat blog-publish-dir "/index.html")))
+      (with-temp-file publish-filename
+        (insert publish-string)
+        ;;scripts
+        (goto-char (point-max))
+        (re-search-backward "</body>" nil t)
+        (insert "<script src=\"static/blog.js\"></script>")
+        ;;read more
+        (goto-char (point-min))
+        (while (re-search-forward (blog-readmore-html) nil t)
+          (forward-line -3)
+          (kill-line 3)
+          (forward-line 1)
+          (kill-line 2)))))
+#+END_SRC
+
+Most of the publishing settings are defined in org-publish-project-alist.
+#+BEGIN_SRC emacs-lisp
+  (setq org-publish-project-alist
+        `(("blog"
+           :components ("blog-articles" "blog-static"))
+          ("blog-articles"
+           :base-directory ,blog-dir
+           :base-extension "org"
+           :publishing-directory ,blog-publish-dir
+           :preparation-function blog-preparation
+           :completion-function blog-completion
+           :publishing-function org-html-publish-to-html
+           :html-doctype "html5"
+           :with-toc nil
+           :section-numbers nil
+           :with-author nil
+           :with-title nil
+           :html-toplevel-hlevel 1
+           :html-preamble blog-preamble
+           :html-postamble blog-postamble
+           :html-head-include-default-style nil
+           :html-head-include-scripts nil
+           :html-head "<link rel=\"stylesheet\" type=\"text/css\" href=\"static/style.css\" />"
+           :recursive t
+           :exclude "template/*\\|blog.org"
+           )
+          ("blog-static"
+           :base-directory ,(concat blog-dir "/static")
+           :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+           :recursive t
+           :publishing-directory ,(concat blog-publish-dir "/static")
+           :publishing-function org-publish-attachment)))
+#+END_SRC
+
 * Packages
 ** yasnippet
 #+BEGIN_SRC emacs-lisp
