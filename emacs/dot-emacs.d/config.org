@@ -24,8 +24,7 @@ use custom.el to avoid rewrite init.el when emacs startup
 #+BEGIN_SRC emacs-lisp
   (setq package-archives 
         '(("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-          ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-          ("melpa-stable" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa-stable/")))
+          ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
   (package-initialize)
 #+END_SRC 
 
