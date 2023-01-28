@@ -12,4 +12,5 @@ projectile.cache
 config.el
 \#*\#
 .emacs-*
+pyim/
 

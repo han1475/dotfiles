@@ -373,6 +373,37 @@ Most of the publishing settings are defined in org-publish-project-alist.
            :publishing-function org-publish-attachment)))
 #+END_SRC
 
+* input method
+#+BEGIN_SRC emacs-lisp
+  (require-package 'pyim)
+  (require-package 'pyim-basedict)
+  (require-package 'pyim-cregexp-utils)
+  (require-package 'popup)
+
+  (pyim-basedict-enable)
+  (setq default-input-method "pyim")
+  (setq pyim-page-tooltip 'popup)
+  (setq pyim-page-length 5)
+
+  (global-set-key (kbd "C-\\") 'toggle-input-method)
+  (global-set-key (kbd "M-j") 'pyim-convert-string-at-point)
+  (define-key minibuffer-local-map (kbd "C-<return>") 'pyim-cregexp-convert-at-point)
+
+  (pyim-default-scheme 'quanpin)
+
+  (setq-default pyim-english-input-switch-functions
+                '(pyim-probe-dynamic-english
+                  pyim-probe-isearch-mode
+                  pyim-probe-program-mode
+                  pyim-probe-org-structure-template))
+
+  (setq-default pyim-punctuation-half-width-functions
+                '(pyim-probe-punctuation-line-beginning
+                  pyim-probe-punctuation-after-punctuation))
+
+
+  (pyim-isearch-mode 1)
+#+END_SRC
 * Packages
 ** yasnippet
 #+BEGIN_SRC emacs-lisp
