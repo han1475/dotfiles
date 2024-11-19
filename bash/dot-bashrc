@@ -12,7 +12,7 @@ source $HOME/.bash_prompt
 # system
 alias install='sudo pacman -S'
 alias search='sudo pacman -Ss'
-alias update='sudo pacman -Syu'
+alias update='sudo pacman -S archlinux-keyring && sudo pacman -Syu'
 alias remove='sudo pacman -Rcn'
 alias poweroff='sudo shutdown -h now'
 alias reboot='sudo reboot'
