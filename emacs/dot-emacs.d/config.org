@@ -225,6 +225,8 @@ Cursor goes where it was when you previously visited this file
 
   ;; Explicitly load required exporters
   (require 'ox-html)
+  (require 'ox-latex)
+  (require 'ox-ascii)
 #+END_SRC
 *** Org-babel Setup
 #+BEGIN_SRC emacs-lisp
@@ -248,7 +250,8 @@ Cursor goes where it was when you previously visited this file
      (js . t)
      (ditaa . t)
      (dot . t)
-     (plantuml .t)
+     (plantuml . t)
+     (latex . t)
      (org . t)))
   ;; Do not prompt to confirm evaluation
   ;; This may be dangerous - make sure you understand the consequences
@@ -264,15 +267,25 @@ and build the pictures with C-c C-c.
 After evaluating the block results are displayed. You can toggle
 display of inline images with C-c C-x C-v
 
-I disable startup with inline images because when I access my org-files from an
-tty session without X this breaks it fails when trying to display the images on
-a non-X session.
 #+BEGIN_SRC emacs-lisp
-  ;; Don't enable this because it breaks access to emacs from an tty session
-  (setq org-startup-with-inline-images nil)
+  (setq org-startup-with-inline-images t)
 #+END_SRC
 
+preview latex after save
+#+BEGIN_SRC emacs-lisp
+  (add-hook 'org-mode-hook
+            (lambda ()
+              (add-hook 'after-save-hook 'org-preview-latex-fragment nil 'make-it-local)))
+#+END_SRC
 *** Publishing Single files
+**** latex|pdf
+#+BEGIN_SRC emacs-lisp
+  ;; Run xelatex multiple times to get the cross-references right
+  (setq org-latex-pdf-process '("xelatex -shell-escape %f"
+                                "xelatex -shell-escape %f"
+                                "xelatex -shell-escape %f"))
+#+END_SRC
+
 *** Publishing Projects
 We define some functions and variables that will be used by org-publish.
 #+BEGIN_SRC emacs-lisp
