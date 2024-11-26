@@ -8,9 +8,21 @@
 ;;; Code:
 
 ;; no need to activate all the packages so early
+;; So we can detect this having been loaded
 (setq package-enable-at-startup nil)
 
-;; So we can detect this having been loaded
+;; Frame Parameter
+(setq default-frame-alist
+       '((height . 30)
+         (width . 100)
+         (left . (- 546))
+         (top .  (- 270))
+         (cursor-type . bar)
+         (vertical-scroll-bars . nil)
+         (horizontal-scroll-bars . nil)
+         (tool-bar-lines . 0)
+         (menu-bar-lines . 0)))
+         
 (provide 'early-init)
 
 ;; Local Variables:
