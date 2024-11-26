@@ -393,6 +393,7 @@ Most of the publishing settings are defined in org-publish-project-alist.
   (require-package 'pyim-cregexp-utils)
   (require-package 'popup)
 
+  (require 'popup)
   (pyim-basedict-enable)
   (setq default-input-method "pyim")
   (setq pyim-page-tooltip 'popup)
