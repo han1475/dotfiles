@@ -17,6 +17,7 @@
          (width . 100)
          (left . (- 546))
          (top .  (- 270))
+         (font . "DejaVu Sans Mono-12")
          (cursor-type . bar)
          (vertical-scroll-bars . nil)
          (horizontal-scroll-bars . nil)
