@@ -268,7 +268,8 @@ After evaluating the block results are displayed. You can toggle
 display of inline images with C-c C-x C-v
 
 #+BEGIN_SRC emacs-lisp
-  (setq org-startup-with-inline-images t)
+  ;; I disable this because it crash when using in WSLg
+  (setq org-startup-with-inline-images nil)
 #+END_SRC
 
 preview latex after save
