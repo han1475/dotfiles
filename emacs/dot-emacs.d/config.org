@@ -416,6 +416,25 @@ Most of the publishing settings are defined in org-publish-project-alist.
                 '(pyim-probe-punctuation-line-beginning
                   pyim-probe-punctuation-after-punctuation))
 
+  ;; automatically load pinyin dictionaries "*.pyim" under "~/.eim/"
+  (defvar my-pyim-directory "~/.eim"
+  "The directory containing pyim dictionaries.")
+
+  (let* ((files (and (file-exists-p my-pyim-directory)
+                     (directory-files-recursively my-pyim-directory "\.pyim$")))
+         disable-basedict)
+    (when (and files (> (length files) 0))
+      (setq pyim-dicts
+            (mapcar (lambda (f)
+                      (list :name (file-name-base f) :file f))
+                    files))
+      (dolist (f files)
+        (when (member (file-name-base f) '("pyim-another-dict"
+                                           "pyim-tsinghua-dict.pyim"
+                                           "pyim-bigdict"
+                                           "pyim-greatdict"))
+          (setq disable-basedict t)))
+    (unless disable-basedict (pyim-basedict-enable))))
 
   (pyim-isearch-mode 1)
 #+END_SRC
