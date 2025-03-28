@@ -13,4 +13,4 @@ config.el
 \#*\#
 .emacs-*
 pyim/
-
+eln-cache
