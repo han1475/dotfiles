@@ -285,6 +285,8 @@ preview latex after save
   (setq org-latex-pdf-process '("xelatex -shell-escape %f"
                                 "xelatex -shell-escape %f"
                                 "xelatex -shell-escape %f"))
+
+  (setq org-latex-src-block-backend 'minted)
 #+END_SRC
 
 *** Publishing Projects
